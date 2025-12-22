@@ -16,7 +16,8 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+  }],
+  pathPrefix: "/with-eunha",
 };
 
 export default config;
