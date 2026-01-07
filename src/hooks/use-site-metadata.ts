@@ -11,7 +11,7 @@ export const useSiteMetadata = () => {
           image
           siteUrl
           locale
-          
+          icon
         }
       }
     }

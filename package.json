@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@loadable/component": "^5.16.7",
+    "@paper-design/shaders-react": "^0.0.68",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
@@ -34,10 +36,14 @@
     "gatsby-source-filesystem": "^5.15.0",
     "gatsby-transformer-sharp": "^5.15.0",
     "lucide-react": "^0.562.0",
+    "next-themes": "^0.4.6",
     "postcss": "^8.5.6",
     "react": "^18.2.0",
     "react-day-picker": "^9.13.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
+    "react-naver-maps": "^0.1.4",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "tailwindcss-animate": "^1.0.7",
@@ -46,6 +52,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "@types/loadable__component": "^5.13.10",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
