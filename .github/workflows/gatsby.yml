@@ -95,3 +95,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          GATSBY_NAVER_MAP_API_KEY: ${{ secrets.GATSBY_NAVER_MAP_API_KEY }}

@@ -62,7 +62,6 @@ const App = () => {
             }
         };
     }, []);
-
     return (
         <>
             <FixedOverlay>
@@ -73,7 +72,7 @@ const App = () => {
                     <MusicControl visible={isNavVisible && !isGalleryOpen} />
                 </div>
             </FixedOverlay>
-            <NavermapsProvider ncpKeyId='wrci6kh5h6'>
+            <NavermapsProvider ncpKeyId={process.env.GATSBY_NAVER_MAP_API_KEY || ''}>
                 <div className="bg-beige scroll-smooth text-gray/70 font-body">
                     <div className="border-x-0 md:border-x-2 max-w-2xl mx-auto items-center justify-center">
                         <PaperTexture
