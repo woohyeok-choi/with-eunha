@@ -1,15 +1,15 @@
 import React from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from '@/components/wrapper/scroll-anim';
-import { NaverMap, Marker, Container, useNavermaps } from 'react-naver-maps';
 import { isMobile } from 'react-device-detect';
 import { Button } from "@/components/ui/button";
+import loadable from "@loadable/component"
 
+
+const Map = loadable(() => import("@/components/ui/naver-map"), { ssr: false });
 
 const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
-    const navermaps = useNavermaps();
     const [lat, lng] = [37.457770, 126.953860];
-    const center = new navermaps.LatLng(lat, lng);
     const zoom = 16;
     const encodedAddress = encodeURIComponent('서울대학교 교수회관 웨딩홀');
     const urlNaver = `https://map.naver.com/p/search/${encodedAddress}`;
@@ -30,25 +30,7 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </p>
                     </div>
 
-                    <Container className='w-full aspect-3/2 border-y-2'>
-                        <NaverMap
-                            center={center}
-                            zoom={zoom}
-                            zoomOrigin={center}
-                        >
-                            <Marker
-                                position={center}
-                                clickable={false}
-                                draggable={false}
-                                icon={{
-                                    content: `<div class="flex items-center border-2 border-gray-pink bg-white/70 p-1 space-x-2 rounded-sm">
-                                                  <img src="/marker.png" alt="marker" class="w-6" />
-                                                  <p class="font-bold text-xs text-left">서울대학교<br /> 교수회관 웨딩홀</p>
-                                              </div>`
-                                }}
-                            />
-                        </NaverMap>
-                    </Container >
+                    <Map zoom={zoom} center={[lat, lng]} text="서울대학교 <br/>교수회관 웨딩홀" />
 
                     <div className='grid grid-cols-3 gap-4 w-full pt-6 px-2'>
                         <a href={urlNaver} target={isMobile ? "_self" : "_blank"} className='w-full'>

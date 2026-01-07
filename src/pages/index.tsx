@@ -64,15 +64,15 @@ const App = () => {
     }, []);
     return (
         <>
-            <FixedOverlay>
-                <div className="w-full pointer-events-auto">
-                    <Navbar links={links} visible={isNavVisible} />
-                </div>
-                <div className="pointer-events-auto fixed bottom-8 right-4 animate-in fade-in zoom-in duration-300">
-                    <MusicControl visible={isNavVisible && !isGalleryOpen} />
-                </div>
-            </FixedOverlay>
             <NavermapsProvider ncpKeyId={process.env.GATSBY_NAVER_MAP_API_KEY || ''}>
+                <FixedOverlay>
+                    <div className="w-full pointer-events-auto">
+                        <Navbar links={links} visible={isNavVisible} />
+                    </div>
+                    <div className="pointer-events-auto fixed bottom-8 right-4 animate-in fade-in zoom-in duration-300">
+                        <MusicControl visible={isNavVisible && !isGalleryOpen} />
+                    </div>
+                </FixedOverlay>
                 <div className="bg-beige scroll-smooth text-gray/70 font-body">
                     <div className="border-x-0 md:border-x-2 max-w-2xl mx-auto items-center justify-center">
                         <PaperTexture
@@ -90,8 +90,8 @@ const App = () => {
                         </PaperTexture>
                     </div>
                 </div >
+                <Toaster />
             </NavermapsProvider>
-            <Toaster />
         </>
     )
 }
