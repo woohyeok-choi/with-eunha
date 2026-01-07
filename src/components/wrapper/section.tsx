@@ -1,4 +1,3 @@
-import { PaperTexture } from '@paper-design/shaders-react';
 import React from 'react';
 
 interface SectionProps {

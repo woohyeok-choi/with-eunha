@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Section from "@/components/wrapper/section";
-import { differenceInSeconds, format, startOfMonth, endOfMonth, getDay, addDays, isSameDay } from "date-fns";
+import { differenceInSeconds, format, startOfMonth, getDay, addDays, isSameDay } from "date-fns";
 import ScrollAnim from '../wrapper/scroll-anim';
 
 

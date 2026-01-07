@@ -32,8 +32,8 @@ const AboutSection = React.forwardRef<HTMLElement>((props, ref) => {
             <ScrollAnim direction='right'>
                 <div className="grid grid-cols-2 gap-4 items-start px-2">
                     <div className="space-y-6 text-center">
-                        <div className="relative aspect-[1/1] rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
-                            <img src="/skeleton.png" className='w-full h-full object-cover' />
+                        <div className="relative aspect-square rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
+                            <img src="/skeleton.png" className='w-full h-full object-cover' alt='Bride photo'/>
                         </div>
                         <p className='justify-center'>
                             <span className="text-md text-blue pr-4">신랑</span> <span className="text-lg">최 우 혁</span><br />
@@ -42,8 +42,8 @@ const AboutSection = React.forwardRef<HTMLElement>((props, ref) => {
                     </div>
 
                     <div className="space-y-6 text-center">
-                        <div className="relative aspect-[1/1] rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
-                            <img src="/skeleton.png" className='w-full h-full object-cover' />
+                        <div className="relative aspect-square rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
+                            <img src="/skeleton.png" className='w-full h-full object-cover' alt='Bride photo' />
                         </div>
                         <p className='justify-center'>
                             <span className="text-md text-gray-pink pr-4">신부</span> <span className="text-lg">강 은 하</span><br />

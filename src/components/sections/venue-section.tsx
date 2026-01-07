@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from '@/components/wrapper/scroll-anim';
 import { NaverMap, Marker, Container, useNavermaps } from 'react-naver-maps';

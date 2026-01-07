@@ -84,6 +84,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                     <img
                                                         src={photo}
                                                         className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
+                                                        alt='Wedding photo'
                                                     />
                                                 </div>
                                             </div>
@@ -105,6 +106,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                                     <img
                                                                         src={p}
                                                                         className="max-h-[85vh] w-auto object-contain rounded-sm"
+                                                                        alt='Wedding photo'
                                                                     />
                                                                 </div>
                                                             </CarouselItem>
@@ -161,6 +163,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                             <img
                                                                 src={photo}
                                                                 className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
+                                                                alt='Wedding photo'
                                                             />
                                                         </div>
                                                     </div>
@@ -182,6 +185,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                                             <img
                                                                                 src={p}
                                                                                 className="max-h-[85vh] w-auto object-contain rounded-sm"
+                                                                                alt='Wedding photo'
                                                                             />
                                                                         </div>
                                                                     </CarouselItem>
