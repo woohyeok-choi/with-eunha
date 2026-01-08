@@ -184,7 +184,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                                 {photos.map((p, i) => (
                                                                     <CarouselItem key={i} className="basis-full">
                                                                         <div className="flex items-center justify-center p-0">
-                                                                            <img
+                                                                            <Image
                                                                                 src={p}
                                                                                 className="max-h-[85vh] w-auto object-contain rounded-sm"
                                                                                 alt='Wedding photo'
