@@ -3,7 +3,8 @@
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
 name: Deploy Gatsby site to Pages
-
+env:
+  GATSBY_NAVER_MAP_API_KEY: ${{ secrets.GATSBY_NAVER_MAP_API_KEY }}
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -95,5 +96,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        env:
-          GATSBY_NAVER_MAP_API_KEY: ${{ secrets.GATSBY_NAVER_MAP_API_KEY }}
