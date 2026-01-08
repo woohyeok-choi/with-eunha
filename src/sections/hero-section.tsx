@@ -21,7 +21,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             <div className="z-10 w-full">
                 <ScrollAnim direction="right">
                     <div className="absolute top-0 right-0 py-12 px-6 sm:px-24 md:p-16">
-                        <HeroLogo className="h-30 w-auto drop-shadow-md drop-shadow-neutral-400/70 "/>
+                        <HeroLogo className="h-30 w-auto drop-shadow-md drop-shadow-neutral-400/70 sm:h-48"/>
                     </div>
 
                 </ScrollAnim>
