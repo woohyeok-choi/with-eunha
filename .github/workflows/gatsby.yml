@@ -87,7 +87,7 @@ jobs:
         with:
           path: ./public
       - name: Check API Key
-        run: cat API Key is -  ${{GATSBY_NAVER_MAP_API_KEY}}
+        run: cat API Key is - ${{GATSBY_NAVER_MAP_API_KEY}}
 
   # Deployment job
   deploy:
