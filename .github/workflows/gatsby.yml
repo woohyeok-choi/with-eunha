@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print API Key
-        run: cat $GATSBY_NAVER_MAP_API_KEY
+        run: echo "$GATSBY_NAVER_MAP_API_KEY"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
