@@ -41,7 +41,7 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </a>
                         <a href={urlKakao} target={isMobile ? "_self" : "_blank"} className='w-full'>
                             <Button variant="outline" className='w-full flex flex-row items-center justify-center gap-2'>
-                                <img src="/kakao.png" alt="kakao map" className="h-4 md:h-6 spect-square" />
+                                <img src="../../resources/kakao.png" alt="kakao map" className="h-4 md:h-6 spect-square" />
                                 <span className="text-xs md:text-base">카카오맵</span>
                             </Button>
                         </a>

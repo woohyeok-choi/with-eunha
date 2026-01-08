@@ -1,5 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
-
+import { withPrefix } from "gatsby";
 
 require("dotenv").config({
     path: `.env`,
@@ -42,7 +42,6 @@ const config: GatsbyConfig = {
         }
 
     ],
-
     pathPrefix: "/with-eunha",
 };
 
