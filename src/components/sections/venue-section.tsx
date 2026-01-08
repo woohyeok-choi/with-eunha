@@ -4,6 +4,7 @@ import ScrollAnim from '@/components/wrapper/scroll-anim';
 import { isMobile } from 'react-device-detect';
 import { Button } from "@/components/ui/button";
 import loadable from "@loadable/component"
+import {StaticImage} from "gatsby-plugin-image";
 
 
 const Map = loadable(() => import("@/components/ui/naver-map"), { ssr: false });
@@ -41,7 +42,7 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </a>
                         <a href={urlKakao} target={isMobile ? "_self" : "_blank"} className='w-full'>
                             <Button variant="outline" className='w-full flex flex-row items-center justify-center gap-2'>
-                                <img src="../../resources/kakao.png" alt="kakao map" className="h-4 md:h-6 spect-square" />
+                                <StaticImage src="../../resources/kakao.png" alt="Kakao Map" className="h-4 md:h-6 aspect-square" />
                                 <span className="text-xs md:text-base">카카오맵</span>
                             </Button>
                         </a>
