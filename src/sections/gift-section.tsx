@@ -12,7 +12,7 @@ import { toast } from "sonner"
 import ScrollAnim from '../components/wrapper/scroll-anim';
 
 
-const AccountRow = ({ name, bank, account }: { name: string, bank: string, account: string }) => {
+const AccountRow = ({ role, name, bank, account }: { role: string, name: string, bank: string, account: string }) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = async () => {
@@ -47,9 +47,10 @@ const AccountRow = ({ name, bank, account }: { name: string, bank: string, accou
 
     return (
         <div className="flex items-center justify-between py-3 border-b last:border-0 border-gray-100">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                <span className="font-medium min-w-16">{name}</span>
-                <span className="text-sm text-gray-600">{bank} {account}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-12">
+                <span className="font-bold text-base min-w-32">{role}</span>
+                <span className="text-sm sm:text-base min-w-16">{name}</span>
+                <span className="text-sm sm:text-base">{bank} {account}</span>
             </div>
             <Button
                 variant="ghost"
@@ -88,9 +89,9 @@ const GiftSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </AccordionTrigger>
                         <AccordionContent className="px-4 pb-4">
                             <div className="space-y-1">
-                                <AccountRow name="최우혁" bank="OO은행" account="000-000-000000" />
-                                <AccountRow name="아버지" bank="OO은행" account="000-000-000000" />
-                                <AccountRow name="어머니" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신랑" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신랑 아버지" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신랑 어머니" name="OOO" bank="OO은행" account="000-000-000000" />
                             </div>
                         </AccordionContent>
                     </AccordionItem>
@@ -101,9 +102,9 @@ const GiftSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </AccordionTrigger>
                         <AccordionContent className="px-4 pb-4">
                             <div className="space-y-1">
-                                <AccountRow name="강은하" bank="OO은행" account="000-000-000000" />
-                                <AccountRow name="아버지" bank="OO은행" account="000-000-000000" />
-                                <AccountRow name="어머니" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신부" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신부 아버지" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신부 어머니" name="OOO" bank="OO은행" account="000-000-000000" />
                             </div>
                         </AccordionContent>
                     </AccordionItem>
