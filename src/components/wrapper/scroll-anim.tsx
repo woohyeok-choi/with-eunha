@@ -37,7 +37,7 @@ const ScrollAnim: React.FC<Props> = ({ children, direction = 'up', className = '
     }, []);
 
     const [from, to] = directionToClasses[direction] || directionToClasses.up;
-    const classes = `transition-all duration-1000 ease-in-out transform ${isVisible ? `opacity-100 ${to}` : `opacity-0 ${from}`} ${className}`;
+    const classes = `transition duration-1000 ease-in-out transform-gpu ${isVisible ? `opacity-100 ${to}` : `opacity-0 ${from}`} ${className}`;
 
     return (
         <div ref={ref} className={classes}>
