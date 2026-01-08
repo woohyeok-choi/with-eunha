@@ -5,6 +5,7 @@
 name: Deploy Gatsby site to Pages
 env:
   GATSBY_NAVER_MAP_API_KEY: ${{ secrets.GATSBY_NAVER_MAP_API_KEY }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -29,6 +30,7 @@ concurrency:
 defaults:
   run:
     shell: bash
+
 
 jobs:
   # Build job
@@ -84,6 +86,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: Check API Key
+        run: cat API Key is -  ${{GATSBY_NAVER_MAP_API_KEY}}
 
   # Deployment job
   deploy:
