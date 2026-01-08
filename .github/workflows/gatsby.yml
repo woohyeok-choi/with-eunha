@@ -37,6 +37,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Print API Key
+        run: echo "API Key is - $GATSBY_NAVER_MAP_API_KEY"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
@@ -86,8 +88,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-      - name: Check API Key
-        run: cat API Key is - $GATSBY_NAVER_MAP_API_KEY
 
   # Deployment job
   deploy:
