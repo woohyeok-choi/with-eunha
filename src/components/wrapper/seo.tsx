@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSiteMetadata } from '@/hooks/use-site-metadata'
+import mainImage from '@/resources/static/main.jpg'
 
 interface Props {
     title?: string
@@ -9,13 +10,12 @@ interface Props {
 }
 
 const SEO: React.FC<Props> = ({ title, description, path, children }) => {
-    const { title: defTitle, description: defDesc, image, siteUrl, icon } = useSiteMetadata()
+    const { title: defTitle, description: defDesc, siteUrl } = useSiteMetadata()
     const seo = {
         title: title || defTitle,
         description: description || defDesc,
-        image: `${siteUrl}${image}`,
+        image: mainImage,
         url: `${siteUrl}${path || ''}`,
-        icon: `${siteUrl}${icon}`
     }
 
     return (
@@ -23,7 +23,6 @@ const SEO: React.FC<Props> = ({ title, description, path, children }) => {
             <title>{seo.title}</title>
             <meta name="description" content={seo.description} />
             <meta name='image' content={seo.image} />
-            <link rel="icon" href={seo.icon} />
             <meta name="twitter:title" content={seo.title} />
             <meta name="twitter:image" content={seo.image} />
             <meta name="twitter:description" content={seo.description} />

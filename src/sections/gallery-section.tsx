@@ -162,7 +162,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                         onClick={() => setCurrentPhotoIndex(index)}
                                                     >
                                                         <div className={`${style.aspectRatio} relative w-full h-full`}>
-                                                            <img
+                                                            <Image
                                                                 src={photo}
                                                                 className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
                                                                 alt='Wedding photo'

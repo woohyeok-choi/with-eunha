@@ -27,7 +27,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                     <div className='text-md/8 sm:text-xl/8 text-center bg-background/60 border-none shadow-md z-50 rounded-sm p-4 sm:p-8'>
                         <div className='shrink-0 bg-gray-500 h-px w-full' />
                         <p className='p-6'>2026년 6월 13일 토요일 오후 1시<br />서울대학교 교수회관 웨딩홀</p>
-                        <div className='shrink-0 bg-gray-500 h-1px w-full' />
+                        <div className='shrink-0 bg-gray-500 h-px w-full' />
                     </div>
                 </ScrollAnim>
             </div>
