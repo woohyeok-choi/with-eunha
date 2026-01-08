@@ -9,6 +9,7 @@ export const onCreateWebpackConfig = ({ actions }) => {
                 "@/components": path.resolve(__dirname, "src/components"),
                 "@/lib/utils": path.resolve(__dirname, "src/lib/utils"),
                 "@/hooks": path.resolve(__dirname, "src/hooks"),
+                "@/sections": path.resolve(__dirname, "src/sections"),
             },
         },
     })

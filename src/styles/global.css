@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: normal;
     font-display: swap;
-    src: url('../fonts/batang-regular.woff') format('woff2');
+    src: url('../resources/fonts/batang-regular.woff') format('woff2');
 }
 
 @font-face {
@@ -17,7 +17,7 @@
     font-style: normal;
     font-weight: bold;
     font-display: swap;
-    src: url('../fonts/batang-bold.woff') format('woff2');
+    src: url('../resources/fonts/batang-bold.woff') format('woff2');
 }
 
 @theme {

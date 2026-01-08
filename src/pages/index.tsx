@@ -3,12 +3,12 @@ import type { HeadFC } from "gatsby"
 import SEO from "@/components/wrapper/seo";
 import Navbar from "@/components/ui/nav-bar";
 import MusicControl from "@/components/ui/music-control";
-import HeroSection from "@/components/sections/hero-section";
-import AboutSection from "@/components/sections/about-section";
-import DateSection from "@/components/sections/date-section";
-import VenueSection from "@/components/sections/venue-section";
-import GallerySection from "@/components/sections/gallery-section";
-import GiftSection from "@/components/sections/gift-section";
+import HeroSection from "@/sections/hero-section";
+import AboutSection from "@/sections/about-section";
+import DateSection from "@/sections/date-section";
+import VenueSection from "@/sections/venue-section";
+import GallerySection from "@/sections/gallery-section";
+import GiftSection from "@/sections/gift-section";
 import FixedOverlay from "@/components/wrapper/fixed-overlay";
 import { PaperTexture } from "@paper-design/shaders-react";
 import { NavermapsProvider } from "react-naver-maps";

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from "@/components/wrapper/scroll-anim";
-
+import background from '../resources/static/skeleton.png'
 
 const HeroSection = forwardRef<HTMLElement>((props, ref) => {
     return (
@@ -13,7 +13,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: "url('/skeleton.png')",
+                    backgroundImage: `url(${background})`,
                 }}
             />
             <div className="z-10 w-full">

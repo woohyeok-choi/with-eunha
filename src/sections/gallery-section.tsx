@@ -14,14 +14,17 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
-import ScrollAnim from '../wrapper/scroll-anim';
+import ScrollAnim from '../components/wrapper/scroll-anim';
+import Image from "@/components/wrapper/image";
+import skeleton from "../resources/static/skeleton.png"
 
 interface Props {
     onOpenChange?: (isOpen: boolean) => void;
 }
 
 const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, ref) => {
-    const photos = Array.from({ length: 23 }, () => '/skeleton.png');
+    const photos = Array.from({ length: 23 }, () => undefined);
+
     const [isExpanded, setIsExpanded] = useState(false);
     const [_, setCurrentPhotoIndex] = useState(0);
 
@@ -53,7 +56,6 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                 <div className="max-w-6xl mx-auto w-full px-0">
                     <h2 className="text-2xl font-title text-center text-light-pink font-bold pb-12">갤러리</h2>
 
-                    {/* Initial Grid */}
                     <div className="grid grid-cols-6 gap-2">
                         {initialPhotos.map((photo, index) => {
                             const totalPhotos = initialPhotos.length;
@@ -81,7 +83,7 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                 onClick={() => setCurrentPhotoIndex(index)}
                                             >
                                                 <div className={`${style.aspectRatio} relative w-full h-full`}>
-                                                    <img
+                                                    <Image
                                                         src={photo}
                                                         className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
                                                         alt='Wedding photo'
@@ -103,10 +105,10 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
                                                         {photos.map((p, i) => (
                                                             <CarouselItem key={i} className="basis-full">
                                                                 <div className="flex items-center justify-center p-0">
-                                                                    <img
-                                                                        src={p}
+                                                                    <Image
+                                                                        src={skeleton}
                                                                         className="max-h-[85vh] w-auto object-contain rounded-sm"
-                                                                        alt='Wedding photo'
+                                                                        alt='Wedding photo (Large)'
                                                                     />
                                                                 </div>
                                                             </CarouselItem>

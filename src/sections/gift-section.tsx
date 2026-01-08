@@ -9,7 +9,7 @@ import {
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner"
-import ScrollAnim from '../wrapper/scroll-anim';
+import ScrollAnim from '../components/wrapper/scroll-anim';
 
 
 const AccountRow = ({ name, bank, account }: { name: string, bank: string, account: string }) => {

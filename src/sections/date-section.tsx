@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Section from "@/components/wrapper/section";
 import { differenceInSeconds, format, startOfMonth, getDay, addDays, isSameDay } from "date-fns";
-import ScrollAnim from '../wrapper/scroll-anim';
+import ScrollAnim from '../components/wrapper/scroll-anim';
 
 
 const DateSection = React.forwardRef<HTMLElement>((props, ref) => {

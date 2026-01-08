@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Music, VolumeX } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import bgm from "../../resources/static/bgm.mp3"
+
 
 interface Props {
     visible?: boolean;
@@ -34,7 +36,7 @@ const MusicControl: React.FC<Props> = ({ visible = true }) => {
     return (
         <div className={`transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
             <audio ref={audioRef} loop>
-                <source src="/bgm.mp3" type="audio/mpeg" />
+                <source src={bgm} type="audio/mpeg" />
             </audio>
             <Button
                 onClick={toggleMusic}
