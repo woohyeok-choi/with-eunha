@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from "@/components/wrapper/scroll-anim";
+import { HeroLogo } from '@/components/ui/hero-logo'
+// @ts-ignore
 import background from '../resources/static/skeleton.png'
 
 const HeroSection = forwardRef<HTMLElement>((props, ref) => {
@@ -18,9 +20,10 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             />
             <div className="z-10 w-full">
                 <ScrollAnim direction="right">
-                    <div className="absolute top-0 right-0 font-title text-4xl/10 text-shadow-lg text-right text-white tracking-tight p-8 md:p-16 md:text-5xl/14">
-                        <p>최우혁<br />그리고<br />강은하</p>
+                    <div className="absolute top-0 right-0 py-12 px-6 sm:px-24 md:p-16">
+                        <HeroLogo className="h-30 w-auto drop-shadow-md drop-shadow-neutral-400/70 "/>
                     </div>
+
                 </ScrollAnim>
 
                 <ScrollAnim direction="up" className="absolute bottom-0 right-0 left-0 flex justify-center pb-30" threshold={0.1}>

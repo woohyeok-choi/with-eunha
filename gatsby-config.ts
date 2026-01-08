@@ -21,6 +21,14 @@ const config: GatsbyConfig = {
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
         {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: "/src/resources/static/",
+                },
+            },
+        },
+        {
             resolve: 'gatsby-source-filesystem',
             options: {
                 "name": "resources",

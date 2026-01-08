@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSiteMetadata } from '@/hooks/use-site-metadata'
-import mainImage from '@/resources/static/main.jpg'
+import mainImage from '@/resources/static/meta-image.jpg'
 
 interface Props {
     title?: string
