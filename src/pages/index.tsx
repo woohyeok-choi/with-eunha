@@ -2,12 +2,6 @@ import React from "react"
 import type { HeadFC } from "gatsby"
 import SEO from "@/components/wrapper/seo";
 import {PaperTexture} from "@paper-design/shaders-react";
-import HeroSection from "@/sections/hero-section";
-import AboutSection from "@/sections/about-section";
-import DateSection from "@/sections/date-section";
-import VenueSection from "@/sections/venue-section";
-import GallerySection from "@/sections/gallery-section";
-import GiftSection from "@/sections/gift-section";
 import {StaticImage} from "gatsby-plugin-image";
 
 
