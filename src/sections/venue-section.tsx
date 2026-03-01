@@ -23,15 +23,14 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                 <div className="flex flex-col items-center w-full">
                     <h2 className="text-2xl font-title font-bold text-center text-light-pink pb-12">오시는 길</h2>
                     <div className="flex flex-col items-center space-y-4 pb-4">
-                        <h3 className="text-xl text-center font-bold">서울대학교 교수회관 웨딩홀</h3>
+                        <h3 className="text-xl text-center font-bold">서울대 교수회관 2층 컨벤션홀</h3>
                         <p className='text-center mx-auto pb-6 leading-10 break-keep'>
-                            2층 컨벤션홀<br />
                             서울특별시 관악구 관악로 1<br />
-                            서울대학교 내 65동 교수회관
+                            서울대학교 65동 교수회관
                         </p>
                     </div>
 
-                    <Map zoom={zoom} center={[lat, lng]} text="서울대학교 <br/>교수회관 웨딩홀" />
+                    <Map zoom={zoom} center={[lat, lng]} text="서울대 교수회관<br/>2층 컨벤션홀" />
 
                     <div className='grid grid-cols-3 gap-4 w-full pt-6 px-2'>
                         <a href={urlNaver} target={isMobile ? "_self" : "_blank"} className='w-full'>
@@ -81,7 +80,7 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                     <h2 className="text-xl font-title font-bold text-light-pink">자가용</h2>
                     <p className='leading-10 break-keep text-md'>
                         "서울대학교 교수회관 웨딩홀"로 검색<br />
-                        낙성대 근처의 "호암교수회관"이 아님
+                        ※ 낙성대 근처의 "호암교수회관"과는 다릅니다.
                     </p>
                 </div>
             </ScrollAnim>

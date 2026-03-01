@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const HeroLogo = (props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => {
+const HeroLogo = (props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => {
     const fillWhite = {fill: '#fff'}
     const fillPink = {fill: '#ff8a74'}
     return (
@@ -41,5 +41,6 @@ export const HeroLogo = (props: React.JSX.IntrinsicAttributes & React.SVGProps<S
             </g>
         </svg>
     )
-
 }
+
+export default HeroLogo;

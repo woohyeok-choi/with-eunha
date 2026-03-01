@@ -9,7 +9,7 @@ interface SectionProps {
 
 const Section = React.forwardRef<HTMLElement, SectionProps>(({ id, children, className = "" }, ref) => {
     return (
-        <section id={id} ref={ref} className={`px-1 scroll-mt-32 ${className}`}>
+        <section id={id} ref={ref} className={`scroll-mt-32 ${className}`}>
             {children}
         </section>
     );

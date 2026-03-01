@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Music, VolumeX } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+// @ts-ignore
 import bgm from "../../resources/static/bgm.mp3"
 
 
