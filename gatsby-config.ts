@@ -48,7 +48,6 @@ const config: GatsbyConfig = {
         }
     ],
     pathPrefix: "/with-eunha",
-    assetPrefix: "/with-eunha",
 };
 
 export default config;
