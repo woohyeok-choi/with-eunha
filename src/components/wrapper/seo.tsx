@@ -23,6 +23,7 @@ const SEO: React.FC<Props> = ({ title, description, children }) => {
             <title>{seo.title}</title>
             <meta name="description" content={seo.description} />
             <meta name='image' content={seo.image} />
+            <meta name="twitter:card" content={seo.image} />
             <meta name="twitter:title" content={seo.title} />
             <meta name="twitter:image" content={seo.image} />
             <meta name="twitter:description" content={seo.description} />
