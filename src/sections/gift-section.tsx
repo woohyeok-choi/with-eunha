@@ -73,12 +73,9 @@ const GiftSection = React.forwardRef<HTMLElement>((props, ref) => {
                     <div className="text-center space-y-4">
                         <h2 className="text-2xl font-title font-bold text-light-pink pb-12">마음 전하실 곳</h2>
                         <p className='text-center mx-auto leading-10 break-keep'>
-                            멀리서도 축하의 마음을<br />
-                            전하고 싶으신 분들을 위해<br />
-                            계좌번호를 안내드립니다.<br />
-                            <br />
-                            소중한 축하를 보내주셔서 감사드리며,<br />
-                            따듯한 마음에 깊이 감사드립니다.
+                            멀리서도 소중한 축하를<br />
+                            전해주셔서 감사드리며<br />
+                            따듯한 마음에 깊이 감사드립니다.<br />
                         </p>
                     </div>
                 </ScrollAnim>
