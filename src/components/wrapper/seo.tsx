@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSiteMetadata } from '@/hooks/use-site-metadata'
-import mainImage from '@/resources/static/meta-image.jpg'
 
 interface Props {
     title?: string
@@ -10,11 +9,11 @@ interface Props {
 }
 
 const SEO: React.FC<Props> = ({ title, description, path, children }) => {
-    const { title: defTitle, description: defDesc, siteUrl } = useSiteMetadata()
+    const { title: defTitle, description: defDesc, image, siteUrl } = useSiteMetadata()
     const seo = {
         title: title || defTitle,
         description: description || defDesc,
-        image: mainImage,
+        image: `${siteUrl}${image}`,
         url: `${siteUrl}${path || ''}`,
     }
 

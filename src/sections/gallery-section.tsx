@@ -15,9 +15,8 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import ScrollAnim from '@/components/wrapper/scroll-anim';
-import { useImage } from '@/hooks/use-image';
-import ImageSharp = Queries.ImageSharp;
-import { GatsbyImage } from "gatsby-plugin-image";
+import {GatsbyImage, getImage, IGatsbyImageData} from "gatsby-plugin-image";
+import {graphql, useStaticQuery} from "gatsby";
 
 interface Props {
     onOpenChange?: (isOpen: boolean) => void;
@@ -37,10 +36,10 @@ const getGridStyle = (index: number, totalPhotos: number) => {
 };
 
 interface PhotoGridItemProps {
-    photo: ImageSharp;
+    photo?: IGatsbyImageData;
     index: number;
     style: { colSpan: string; aspectRatio: string };
-    allPhotos: ImageSharp[];
+    allPhotos: IGatsbyImageData[];
     onOpenChange?: (isOpen: boolean) => void;
     onPhotoClick: (index: number) => void;
 }
@@ -62,11 +61,14 @@ const PhotoGridItem: React.FC<PhotoGridItemProps> = ({
                         onClick={() => onPhotoClick(index)}
                     >
                         <div className={`${style.aspectRatio} relative w-full h-full`}>
-                            <GatsbyImage
-                                image={photo.gatsbyImageData}
-                                className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
-                                alt='Wedding photo'
-                            />
+                            {
+                                photo &&
+                                <GatsbyImage
+                                    image={photo}
+                                    className="object-cover w-full h-full duration-300 hover:opacity-90 transition-opacity"
+                                    alt='Wedding photo'
+                                />
+                            }
                         </div>
                     </div>
                 </DialogTrigger>
@@ -82,10 +84,10 @@ const PhotoGridItem: React.FC<PhotoGridItemProps> = ({
                         >
                             <CarouselContent className="">
                                 {allPhotos.map((p, i) => (
-                                    <CarouselItem key={i} className="basis-full">
+                                    <CarouselItem key={i} className="basis-full my-auto">
                                         <div className="flex items-center justify-center p-0">
                                             <GatsbyImage
-                                                image={p.gatsbyImageData}
+                                                image={p}
                                                 className="max-h-[85vh] w-full object-contain rounded-sm"
                                                 alt='Wedding photo (Large)'
                                             />
@@ -95,7 +97,7 @@ const PhotoGridItem: React.FC<PhotoGridItemProps> = ({
                             </CarouselContent>
                             <CarouselPrevious className="left-2 cursor-pointer bg-white/10 hover:bg-white/20 border-none text-white" />
                             <CarouselNext className="right-2 cursor-pointer bg-white/10 hover:bg-white/20 border-none text-white" />
-                            <DialogClose className="absolute top-4 right-4 z-50 cursor-pointer rounded-full bg-white/10 hover:bg-white/20 p-1.5 text-white hover:text-accent-foreground transition-colors">
+                            <DialogClose className="absolute top-6 right-4 z-50 cursor-pointer rounded-full bg-white/10 hover:bg-white/20 p-1.5 text-white hover:text-accent-foreground transition-colors">
                                 <X className="h-5 w-5 " />
                                 <span className="sr-only">Close</span>
                             </DialogClose>
@@ -108,13 +110,33 @@ const PhotoGridItem: React.FC<PhotoGridItemProps> = ({
 };
 
 const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, ref) => {
-    const photos: ImageSharp[] = useImage()
+    const data = useStaticQuery(graphql`
+        query  {
+          allFile(
+            filter: {relativePath: {regex: "/gallery-[0-9]{2,}.jpg/"}}
+            sort: {relativePath: ASC}
+          ) {
+            edges {
+              node {
+                childImageSharp {
+                  gatsbyImageData(
+                      placeholder: BLURRED, 
+                      formats: [AUTO, AVIF],
+                      avifOptions: {quality: 50}
+                  )
+                }
+              }
+            }
+          }
+        }
+    `)
+    const photos = data.allFile.edges.map((edge: { node: { childImageSharp: any; }; }) => getImage(edge.node));
 
     const [isExpanded, setIsExpanded] = useState(false);
     const [_, setCurrentPhotoIndex] = useState(0);
 
-    const initialPhotos: ImageSharp[] = photos.slice(0, 9);
-    const expandablePhotos: ImageSharp[] = photos.slice(9);
+    const initialPhotos: IGatsbyImageData[] = photos.slice(0, 9);
+    const expandablePhotos: IGatsbyImageData[] = photos.slice(9);
 
     const internalRef = useRef<HTMLElement | null>(null);
 
@@ -197,3 +219,5 @@ const GallerySection = React.forwardRef<HTMLElement, Props>(({ onOpenChange }, r
 GallerySection.displayName = "GallerySection";
 
 export default GallerySection;
+
+

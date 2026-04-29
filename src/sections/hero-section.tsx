@@ -2,23 +2,38 @@ import React, { forwardRef } from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from "@/components/wrapper/scroll-anim";
 import HeroLogo from '@/components/svg/hero-logo'
-import { StaticImage } from "gatsby-plugin-image";
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import {graphql, useStaticQuery} from "gatsby";
 
 const HeroSection = forwardRef<HTMLElement>((props, ref) => {
+    const data = useStaticQuery(graphql`
+        query {
+          file(relativePath: {eq: "hero.jpg"}) {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED, 
+                formats: [AUTO, AVIF],
+                avifOptions: {quality: 50}
+              )
+            }
+          }
+        }
+    `)
+    const img = getImage(data.file)
     return (
         <Section
             id="hero"
             ref={ref}
             className="grid overflow-hidden min-h-screen"
         >
-            <StaticImage
-                src="../resources/static/hero.jpg"
-                alt="Hero Background"
-                layout="fullWidth"
-                placeholder="blurred"
-                className="col-start-1 row-start-1 w-full h-full"
-            />
+            {
+                img && <GatsbyImage
+                    image={img}
+                    alt="Hero Background"
+                    className="col-start-1 row-start-1 w-full h-full"
+                />
+            }
+
 
             <div className="z-10 w-full relative h-full flex flex-col justify-center col-start-1 row-start-1">
                 <ScrollAnim direction="right" className="absolute top-0 right-0">

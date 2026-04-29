@@ -10,6 +10,7 @@ const config: GatsbyConfig = {
         siteUrl: `https://woohyeok-choi.github.io/with-eunha/`,
         description: `2026년 6월 13일 토요일 오후 1시 서울대학교 교수회관 웨딩홀`,
         locale: "ko-KR",
+        image: '/meta.webp'
     },
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin

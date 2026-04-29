@@ -89,9 +89,9 @@ const GiftSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </AccordionTrigger>
                         <AccordionContent className="px-4 pb-4">
                             <div className="space-y-1">
-                                <AccountRow role="신랑" name="OOO" bank="OO은행" account="000-000-000000" />
-                                <AccountRow role="신랑 아버지" name="OOO" bank="OO은행" account="000-000-000000" />
-                                <AccountRow role="신랑 어머니" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신랑" name="최우혁" bank="우리은행" account="1002-752-568732" />
+                                <AccountRow role="신랑 아버지" name="최종문" bank="iM뱅크(구 대구은행)" account="508-11-173167-6" />
+                                <AccountRow role="신랑 어머니" name="최명숙" bank="농협은행" account="352-2277-4891-43" />
                             </div>
                         </AccordionContent>
                     </AccordionItem>
@@ -102,9 +102,8 @@ const GiftSection = React.forwardRef<HTMLElement>((props, ref) => {
                         </AccordionTrigger>
                         <AccordionContent className="px-4 pb-4">
                             <div className="space-y-1">
-                                <AccountRow role="신부" name="OOO" bank="OO은행" account="000-000-000000" />
-                                <AccountRow role="신부 아버지" name="OOO" bank="OO은행" account="000-000-000000" />
-                                <AccountRow role="신부 어머니" name="OOO" bank="OO은행" account="000-000-000000" />
+                                <AccountRow role="신부" name="강은하" bank="케이뱅크" account="100-154-865188" />
+                                <AccountRow role="신부 어머니" name="김덕순" bank="농협은행" account="873-02-105332 " />
                             </div>
                         </AccordionContent>
                     </AccordionItem>

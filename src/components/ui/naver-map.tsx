@@ -1,6 +1,7 @@
 import React from "react"
 import { NaverMap, Marker, Container, useNavermaps } from 'react-naver-maps';
-import marker from "../../resources/static/marker.png";
+// @ts-ignore
+import marker from "@/resources/static/marker.png";
 
 
 interface Props {

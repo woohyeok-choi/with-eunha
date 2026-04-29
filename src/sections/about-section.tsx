@@ -1,13 +1,36 @@
 import React from 'react';
 import Section from "@/components/wrapper/section";
 import ScrollAnim from '../components/wrapper/scroll-anim';
-import { Skeleton } from "@/components/ui/skeleton";
-import { StaticImage } from 'gatsby-plugin-image';
+import {GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Funeral from "@/components/svg/funeral"
+import {graphql, useStaticQuery} from "gatsby";
 
 const AboutSection = React.forwardRef<HTMLElement>((props, ref) => {
-    const groomPhoto = undefined
-    const bridePhoto = undefined
+    const data = useStaticQuery(graphql`
+        query {
+          groom: file(relativePath: {eq: "about-groom.jpg"}) {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED, 
+                formats: [AUTO, AVIF],
+                avifOptions: {quality: 50}
+              )
+            }
+          }
+          bride: file(relativePath: {eq: "about-bride.jpg"}) {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED, 
+                formats: [AUTO, AVIF],
+                avifOptions: {quality: 50}
+              )
+            }
+          }
+        }
+    `)
+
+    const imgGroom = getImage(data.groom)
+    const imgBride = getImage(data.bride)
 
     return (
         <Section id="about" ref={ref}>
@@ -38,9 +61,7 @@ const AboutSection = React.forwardRef<HTMLElement>((props, ref) => {
                     <div className="text-center">
                         <div className="relative aspect-square rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
                             {
-                                groomPhoto ?
-                                    <StaticImage className='w-full h-full object-cover' alt="Groom photo" src={groomPhoto} /> :
-                                    <Skeleton className='w-full h-full object-cover' />
+                                imgGroom !== undefined && <GatsbyImage className='w-full h-full object-cover' alt="Groom photo" image={imgGroom} />
                             }
                         </div>
                         <p className='pt-4 justify-center'>
@@ -52,9 +73,8 @@ const AboutSection = React.forwardRef<HTMLElement>((props, ref) => {
                     <div className="text-center">
                         <div className="relative aspect-square rounded-sm shadow-sm w-full overflow-hidden hover:scale-102 transition-transform duration-500">
                             {
-                                bridePhoto ?
-                                    <StaticImage className='w-full h-full object-cover' alt="Groom photo" src={bridePhoto} /> :
-                                    <Skeleton className='w-full h-full object-cover' />}
+                                imgBride !== undefined && <GatsbyImage className='w-full h-full object-cover' alt="Groom photo" image={imgBride} />
+                            }
                         </div>
                         <p className='pt-4 justify-center'>
                             <span className="text-md text-gray-pink pr-4">신부</span> <span className="text-lg">강 은 하</span><br />
