@@ -4,7 +4,6 @@ import ScrollAnim from '@/components/wrapper/scroll-anim';
 import { isMobile } from 'react-device-detect';
 import { Button } from "@/components/ui/button";
 import loadable from "@loadable/component"
-import {StaticImage} from "gatsby-plugin-image";
 
 
 const Map = loadable(() => import("@/components/ui/naver-map"), { ssr: false });
@@ -35,19 +34,19 @@ const VenueSection = React.forwardRef<HTMLElement>((props, ref) => {
                     <div className='grid grid-cols-3 gap-4 w-full pt-6 px-2'>
                         <a href={urlNaver} target={isMobile ? "_self" : "_blank"} className='w-full'>
                             <Button variant="outline" className='w-full flex flex-row items-center justify-center gap-2'>
-                                <StaticImage src="../resources/static/navermap.png" alt="naver map" className="h-4 md:h-6 aspect-square" />
+                                <img src="/navermap.png" alt="naver map" className="h-4 md:h-6 aspect-square" />
                                 <span className="text-xs md:text-base">네이버맵</span>
                             </Button>
                         </a>
                         <a href={urlKakao} target={isMobile ? "_self" : "_blank"} className='w-full'>
                             <Button variant="outline" className='w-full flex flex-row items-center justify-center gap-2'>
-                                <StaticImage src="../resources/static/kakao.png" alt="Kakao Map" className="h-4 md:h-6 aspect-square" />
+                                <img src="/kakao.png" alt="Kakao Map" className="h-4 md:h-6 aspect-square" />
                                 <span className="text-xs md:text-base">카카오맵</span>
                             </Button>
                         </a>
                         <a href={urlTmap} target={isMobile ? "_self" : "_blank"} className='w-full'>
                             <Button variant="outline" className='w-full flex flex-row items-center justify-center gap-2'>
-                                <StaticImage src="../resources/static/tmap.png" alt="tmap" className="h-4 md:h-6 aspect-square" />
+                                <img src="/tmap.png" alt="tmap" className="h-4 md:h-6 aspect-square" />
                                 <span className="text-xs md:text-base">티맵</span>
                             </Button>
                         </a>

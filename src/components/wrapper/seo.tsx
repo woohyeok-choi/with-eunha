@@ -1,7 +1,5 @@
 import React from 'react'
 import { useSiteMetadata } from '@/hooks/use-site-metadata'
-// @ts-ignore
-import meta from "@/resources/static/meta.webp"
 
 
 interface Props {
@@ -11,13 +9,13 @@ interface Props {
     children?: React.ReactNode
 }
 
-const SEO: React.FC<Props> = ({ title, description, path, children }) => {
-    const { title: defTitle, description: defDesc, siteUrl } = useSiteMetadata()
+const SEO: React.FC<Props> = ({ title, description, children }) => {
+    const { title: defTitle, description: defDesc, image, siteUrl } = useSiteMetadata()
     const seo = {
         title: title || defTitle,
         description: description || defDesc,
-        image: meta,
-        url: `${siteUrl}${path || ''}`,
+        image: image,
+        url: `${siteUrl}`,
     }
 
     return (

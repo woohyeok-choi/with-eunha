@@ -40,13 +40,12 @@ const config: GatsbyConfig = {
         {
             resolve: "gatsby-plugin-manifest",
             options: {
-                icon: "./src/resources/static/logo.png",
+                icon: "./static/logo.png",
                 name: "최우혁 ♥ 강은하 결혼합니다!",
                 short_name: "ㅇㅎ ♥ ㅇㅎ",
                 start_url: "/",
             }
         }
-
     ],
     pathPrefix: "/with-eunha",
 };
