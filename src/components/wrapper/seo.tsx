@@ -14,7 +14,7 @@ const SEO: React.FC<Props> = ({ title, description, children }) => {
     const seo = {
         title: title || defTitle,
         description: description || defDesc,
-        image: image,
+        image: `${siteUrl}${image}`,
         url: `${siteUrl}`,
     }
 
